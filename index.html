@@ -1,25 +1,70 @@
 <!DOCTYPE html>
+<head><link rel="stylesheet" href="styles.css"></head>
 <body>
     <div class="container">
-    <h1> 
         <img src="Headshot.jpg" alt="Profile Picture" class="profile-pic">
-        <section>
-            <h2> About Me</h2>
-            <p> Hi there 👋 </p>
-            <p> I'm currently pursuing a Masters of Engineering in CS at Cornell Tech. </p>
-            <p> Coursework: </p>
-            <ul> 
-                <li>Fall '24: Machine Learning Engineering, Networks and Markets (Game theory & Graph theory), HCI and Design, Privacy in the Digital Age</li>
-                <li>Spring '25: Trust & Safety, Blockchain, Building Startup Systems </li>
-            </ul>
-            <p> I previously did my undergraduate studies at UC Berkeley in CS + applied math, and did NLP research at Lawrence Berkeley National Laboratory's <a href="https://nucscholar.berkeley.edu/about/">Nucscholar</a> team. </p>
-            <ul>
-                <li> 🔮 I'm currently volunteering with <a href="https://www.aisafety.asia/">AI Safety Asia</a>, a non-profit dedicated to enhancing AI safety and governance in South East Asia, where I am building <a href="https://seaobservatory.com/">SEA Observatory</a>, an AI policy tracker for the region.</li>
-                <li> 🔭 I've built <a href="https://www.youtube.com/watch?v=pzdwP9G2Vy4">PixelProof</a>, a watermarking platform built on C2PA standard.</li>
-                <li> ⚡ Fun fact: I love to rock climb, I made an <a href="https://github.com/callaunchpad/therock-website">ML rock climbing move generator</a>!</li>
-            </ul>
-        </section>
-    </h1>
+        <div>
+            <section>
+                <h1> About Me</h1>
+                <p> Hi there 👋 
+                I am Shi Hao, a student at Cornell Tech pursuing a Masters in CS. </p>
+                <h3> Coursework: </h3>
+                    <details>
+                        <summary>Fall '24</summary>
+                        <ul>
+                        <li>Privacy in the Digital Age</li>
+                        <li>HCI and Design</li>
+                        <li>Machine Learning Engineering</li>
+                        <li>Networks and Markets (Game theory & Graph theory)</li>
+                        </ul>
+                    </details>
+                    <details>
+                        <summary>Spring '25</summary>
+                        <ul>
+                        <li>Building Startup Systems</li>
+                        <li>Trust & Safety: Platforms, Policies, Products</li>
+                        <li>Blockchains, Cryptocurrencies and Digital Contracts</li>
+                        </ul>
+                    </details>
+                <h3> Background: </h3>
+                <p> I previously did my undergraduate studies at UC Berkeley in CS + applied math, and did NLP research at Lawrence Berkeley National Laboratory's <a href="https://nucscholar.berkeley.edu/about/">Nucscholar</a> team. </p>
+                <h3> Projects: </h3>
+                <ul>
+                    <li> 🔮 I'm currently building <a href="https://seaobservatory.com/">SEA Observatory</a>, an AI policy tracker for South East Asia, and am volunteering with <a href="https://www.aisafety.asia/">AI Safety Asia</a> as their Technical Lead. AISA is a non-profit dedicated to enhancing AI safety and governance in the region. </li>
+                    <li> 🔭 I've built <a href="https://www.youtube.com/watch?v=pzdwP9G2Vy4">PixelProof</a>, a watermarking platform built on C2PA standard.</li>
+                    <li> ⚡ Fun fact: I rock climbing and made an <a href="https://github.com/callaunchpad/therock-website">ML rock climbing move generator</a>!</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <div c;lass="container">
+        <h3> Learnings about <em>&lt;details&gt;</em> HTML element</h3>
+        <p> Details is a cool way to hide content and provide it only when the user toggles it. Having the triangle twist built-in is great and provides a nice visual effect when clicked. I also learnt more about the "open" attribute, and used it to style the content depending on whether it was open or not.</p>
+    </div>
+    <div class="container">
+        <h1>Artwork of the Day (from the MET)</h1>
+        <img class="MET-pic">
+        <script>
+            const METurl = "https://collectionapi.metmuseum.org/public/collection/v1/search?isHighlight=true&hasImages=true"
+            async function getArt() {
+                try {
+                    const response = await fetch(METurl);
+                    const data = await response.json();
+                    const objectID = data.objectIDs[0];
+                    const METurl2 = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectID}`
+                    const response2 = await fetch(METurl2);
+                    const data2 = await response2.json();
+
+                    // Display art
+                    const imgElement = document.querySelector(".MET-pic");
+                    imgElement.src = data2.primaryImage;
+                    imgElement.alt = data2.title;
+                } catch (error) {
+                    console.error("Error fetching artwork:", error);
+                }
+            }
+            getArt();
+        </script>
     </div>
 </body>
 </html>

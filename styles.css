@@ -1,0 +1,61 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.profile-pic {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+html {
+    font-size: 12px;
+  }
+
+body {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 1rem;
+    padding: 2rem;
+}
+
+@media (min-width: 576px) {
+    body {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 992px) {
+    body {
+        font-size: 1.75rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    body {
+        font-size: 2rem;
+    }
+}
+
+summary {
+    margin: -0.5em -0.5em 0;
+    padding: 0.5em;
+  }
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 0.5em;
+}
+
+details[open] {
+    margin-bottom: 0.5em;
+}
