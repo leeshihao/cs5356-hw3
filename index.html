@@ -2,6 +2,24 @@
 <head><link rel="stylesheet" href="styles.css"></head>
 <body>
     <div class="container">
+        <label class="toggle-switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider"></span>
+        </label>
+        <script>
+            function toggleTheme() {
+              const htmlEl = document.documentElement;
+              if (htmlEl.getAttribute("data-theme") === "dark") {
+                htmlEl.removeAttribute("data-theme");
+              } else {
+                htmlEl.setAttribute("data-theme", "dark");
+              }
+            }
+          
+            document.getElementById("theme-toggle").addEventListener("click", toggleTheme);
+        </script>
+    </div>
+    <div class="container">
         <img src="Headshot.jpg" alt="Profile Picture" class="profile-pic">
         <div>
             <section>
@@ -37,9 +55,13 @@
             </section>
         </div>
     </div>
-    <div c;lass="container">
+    <div class="container">
         <h3> Learnings about <em>&lt;details&gt;</em> HTML element</h3>
         <p> Details is a cool way to hide content and provide it only when the user toggles it. Having the triangle twist built-in is great and provides a nice visual effect when clicked. I also learnt more about the "open" attribute, and used it to style the content depending on whether it was open or not.</p>
+    </div>
+    <div class="container">
+        <h3> Learnings about <em>&lt;color-scheme&gt;</em> CSS property</h3>
+        <p> Color scheme is a nice way to switch between light and dark mode. I learnt how to use it in combination with default settings for the user's OS through media queries, as well as styling the rest of my page through the color-scheme CSS property.</p>
     </div>
     <div class="container">
         <h1>Artwork of the Day (from the MET)</h1>
