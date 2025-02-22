@@ -64,24 +64,22 @@
         <p> Color scheme is a nice way to switch between light and dark mode. I learnt how to use it in combination with default settings for the user's OS through media queries, as well as styling the rest of my page through the color-scheme CSS property.</p>
     </div>
     <div class="container">
-        <h3>Math fact of the Day </h3>
-        <p class="math-fact"></p>
+        <h3>Weather in Singapore (my hometown!) </h3>
+        <p class="weather-fact"></p>
         <script>
-            const today = new Date();
-            const month = today.getMonth() + 1; // getMonth() returns 0-11
-            const day = today.getDate();
-            const MATHurl = `http://numbersapi.com/${month}/${day}/date?json`;
-            const proxyUrl = `https://thingproxy.freeboard.io/fetch/${MATHurl}`;
-            async function getFact() {
+            const WeatherUrl = `https://api.data.gov.sg/v1/environment/air-temperature`;
+            async function getWeather() {
                 try {
-                    const response = await fetch(proxyUrl);
+                    const response = await fetch(WeatherUrl);
                     const data = await response.json();
-                    document.querySelector(".math-fact").textContent = data.text;
+                    const celsius = data.items[0].readings.find(r => r.station_id === "S44").value;
+                    const fahrenheit = (celsius * 9/5) + 32;
+                    document.querySelector(".weather-fact").textContent = `${celsius}°C/${fahrenheit.toFixed(1)}°F`;
                 } catch (error) {
-                    console.error("Error fetching math fact:", error);
+                    console.error("Error fetching weather data:", error);
                 }
             }
-            getFact();
+            getWeather();
         </script>
     </div>
 </body>
