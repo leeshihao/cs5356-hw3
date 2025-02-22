@@ -64,28 +64,23 @@
         <p> Color scheme is a nice way to switch between light and dark mode. I learnt how to use it in combination with default settings for the user's OS through media queries, as well as styling the rest of my page through the color-scheme CSS property.</p>
     </div>
     <div class="container">
-        <h1>Artwork of the Day (from the MET)</h1>
-        <img class="MET-pic">
+        <h3>Math fact of the Day </h3>
+        <p class="math-fact"></p>
         <script>
-            const METurl = "https://collectionapi.metmuseum.org/public/collection/v1/search?isHighlight=true&hasImages=true"
-            async function getArt() {
+            const today = new Date();
+            const month = today.getMonth() + 1; // getMonth() returns 0-11
+            const day = today.getDate();
+            const MATHurl = `http://numbersapi.com/${month}/${day}/date?json`;
+            async function getFact() {
                 try {
-                    const response = await fetch(METurl);
+                    const response = await fetch(MATHurl);
                     const data = await response.json();
-                    const objectID = data.objectIDs[0];
-                    const METurl2 = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectID}`
-                    const response2 = await fetch(METurl2);
-                    const data2 = await response2.json();
-
-                    // Display art
-                    const imgElement = document.querySelector(".MET-pic");
-                    imgElement.src = data2.primaryImage;
-                    imgElement.alt = data2.title;
+                    document.querySelector(".math-fact").textContent = data.text;
                 } catch (error) {
-                    console.error("Error fetching artwork:", error);
+                    console.error("Error fetching math fact:", error);
                 }
             }
-            getArt();
+            getFact();
         </script>
     </div>
 </body>
