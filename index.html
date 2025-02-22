@@ -71,9 +71,10 @@
             const month = today.getMonth() + 1; // getMonth() returns 0-11
             const day = today.getDate();
             const MATHurl = `http://numbersapi.com/${month}/${day}/date?json`;
+            const proxyUrl = `https://thingproxy.freeboard.io/fetch/${MATHurl}`;
             async function getFact() {
                 try {
-                    const response = await fetch(MATHurl);
+                    const response = await fetch(proxyUrl);
                     const data = await response.json();
                     document.querySelector(".math-fact").textContent = data.text;
                 } catch (error) {
