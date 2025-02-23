@@ -1,4 +1,6 @@
 :root {
+    --bg-color: white;
+    --text-color: black;
     color-scheme: light dark;
 }
 
