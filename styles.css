@@ -23,9 +23,61 @@
 
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
     padding: 1rem;
+}
+
+.bio-container {
+    display: grid;
+    gap: 4rem;
+    row-gap: 1rem;
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    .bio-container {
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "profile-pic bio"
+            "profile-pic bio-background";
+    }
+    .profile-pic {
+        grid-area: profile-pic;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        align-self: center;
+    }
+    .bio {
+        grid-area: bio;
+    }
+    .bio-background {
+        grid-area: bio-background;
+    }
+}
+
+@media (max-width: 767px) {
+    .bio-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "profile-pic bio"
+            "bio-background bio-background";
+    }
+    .profile-pic {
+        grid-area: profile-pic;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        align-self: center;
+    }
+    .bio {
+        grid-area: bio;
+    }
+    .bio-background {
+        grid-area: bio-background;
+    }
 }
 
 .profile-pic {
@@ -130,4 +182,8 @@ input:checked + .slider {
 
 input:checked + .slider:before {
     transform: translateX(26px);
+}
+
+h3 {
+    margin-bottom: 0.5rem;
 }

@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<head><link rel="stylesheet" href="styles.css"></head>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
     <div class="container">
         <label class="toggle-switch">
@@ -19,49 +22,58 @@
             document.getElementById("theme-toggle").addEventListener("click", toggleTheme);
         </script>
     </div>
-    <div class="container">
-        <img src="Headshot.jpg" alt="Profile Picture" class="profile-pic">
-        <div>
-            <section>
-                <h1> About Me</h1>
-                <p> Hi there 👋 
-                I am Shi Hao, a student at Cornell Tech pursuing a Masters in CS. </p>
-                <h3> Coursework: </h3>
-                    <details>
-                        <summary>Fall '24</summary>
-                        <ul>
-                        <li>Privacy in the Digital Age</li>
-                        <li>HCI and Design</li>
-                        <li>Machine Learning Engineering</li>
-                        <li>Networks and Markets (Game theory & Graph theory)</li>
-                        </ul>
-                    </details>
-                    <details>
-                        <summary>Spring '25</summary>
-                        <ul>
-                        <li>Building Startup Systems</li>
-                        <li>Trust & Safety: Platforms, Policies, Products</li>
-                        <li>Blockchains, Cryptocurrencies and Digital Contracts</li>
-                        </ul>
-                    </details>
-                <h3> Background: </h3>
-                <p> I previously did my undergraduate studies at UC Berkeley in CS + applied math, and did NLP research at Lawrence Berkeley National Laboratory's <a href="https://nucscholar.berkeley.edu/about/">Nucscholar</a> team. </p>
-                <h3> Projects: </h3>
-                <ul>
-                    <li> 🔮 I'm currently building <a href="https://seaobservatory.com/">SEA Observatory</a>, an AI policy tracker for South East Asia, and am volunteering with <a href="https://www.aisafety.asia/">AI Safety Asia</a> as their Technical Lead. AISA is a non-profit dedicated to enhancing AI safety and governance in the region. </li>
-                    <li> 🔭 I've built <a href="https://www.youtube.com/watch?v=pzdwP9G2Vy4">PixelProof</a>, a watermarking platform built on C2PA standard.</li>
-                    <li> ⚡ Fun fact: I love rock climbing! I have also made an <a href="https://github.com/callaunchpad/therock-website">ML rock climbing move generator</a>!</li>
-                </ul>
-            </section>
+    <div class="bio-container">
+        <div class="profile-pic">
+            <img src="Headshot.jpg" alt="Profile Picture" class="profile-pic">
         </div>
+        <section class="bio">
+            <h3> About Me</h3>
+            <p> Hi there 👋 
+            I am Shi Hao, a student at Cornell Tech pursuing a Masters in CS. </p>
+        </section>
+        <section class="bio-background">
+            <h3> Background: </h3>
+            <p> I previously did my undergraduate studies at UC Berkeley in CS + applied math, and did NLP research at Lawrence Berkeley National Laboratory's <a href="https://nucscholar.berkeley.edu/about/">Nucscholar</a> team. </p>
+        </section>
     </div>
     <div class="container">
-        <h3> Learnings about <em>&lt;details&gt;</em> HTML element</h3>
-        <p> Details is a cool way to hide content and provide it only when the user toggles it. Having the triangle twist built-in is great and provides a nice visual effect when clicked. I also learnt more about the "open" attribute, and used it to style the content depending on whether it was open or not.</p>
+        <h3> Coursework: </h3>
+        <details>
+            <summary>Fall '24</summary>
+            <ul>
+            <li>Privacy in the Digital Age</li>
+            <li>HCI and Design</li>
+            <li>Machine Learning Engineering</li>
+            <li>Networks and Markets (Game theory & Graph theory)</li>
+            </ul>
+        </details>
+        <details>
+            <summary>Spring '25</summary>
+            <ul>
+            <li>Building Startup Systems</li>
+            <li>Trust & Safety: Platforms, Policies, Products</li>
+            <li>Blockchains, Cryptocurrencies and Digital Contracts</li>
+            </ul>
+        </details>
     </div>
     <div class="container">
-        <h3> Learnings about <em>&lt;color-scheme&gt;</em> CSS property</h3>
-        <p> Color scheme is a nice way to switch between light and dark mode. I learnt how to use it in combination with default settings for the user's OS through media queries, as well as styling the rest of my page through the color-scheme CSS property.</p>
+        <h3> Projects: </h3>
+        <ul>
+            <li> 🔮 I'm currently building <a href="https://seaobservatory.com/">SEA Observatory</a>, an AI policy tracker for South East Asia, and am volunteering with <a href="https://www.aisafety.asia/">AI Safety Asia</a> as their Technical Lead. AISA is a non-profit dedicated to enhancing AI safety and governance in the region. </li>
+            <li> 🔭 I've built <a href="https://www.youtube.com/watch?v=pzdwP9G2Vy4">PixelProof</a>, a watermarking platform built on C2PA standard.</li>
+            <li> ⚡ Fun fact: I love rock climbing! I have also made an <a href="https://github.com/callaunchpad/therock-website">ML rock climbing move generator</a>!</li>
+        </ul>
+    </div>
+    <div class="container">
+        <h3> Assignment writeups: </h3>
+        <details>
+            <summary>Learnings about <em>&lt;details&gt;</em> HTML element</summary>
+            <p> Details is a cool way to hide content and provide it only when the user toggles it. Having the triangle twist built-in is great and provides a nice visual effect when clicked. I also learnt more about the "open" attribute, and used it to style the content depending on whether it was open or not.</p>
+        </details>
+        <details>
+            <summary>Learnings about <em>&lt;color-scheme&gt;</em> CSS property</summary>
+            <p> Color scheme is a nice way to switch between light and dark mode. I learnt how to use it in combination with default settings for the user's OS through media queries, as well as styling the rest of my page through the color-scheme CSS property.</p>
+        </details>
     </div>
     <div class="container">
         <h3>Weather in Singapore (my hometown!) </h3>
