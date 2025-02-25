@@ -38,7 +38,7 @@
 
 @media (min-width: 768px) {
     .bio-container {
-        grid-template-columns: 1fr 3fr;
+        grid-template-columns: minmax(auto, 1fr) 3fr;
         grid-template-rows: auto auto;
         grid-template-areas:
             "profile-pic bio"
@@ -61,7 +61,7 @@
 
 @media (max-width: 767px) {
     .bio-container {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: minmax(auto, 1fr) 1fr;
         grid-template-rows: auto auto;
         grid-template-areas:
             "profile-pic bio"
@@ -102,9 +102,17 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
 @media (min-width: 576px) {
     body {
         font-size: 1.25rem;
+    }
+    h1 {
+        font-size: 1.75rem;
     }
 }
 
@@ -112,17 +120,26 @@ body {
     body {
         font-size: 1.5rem;
     }
+    h1 {
+        font-size: 2rem;
+    }
 }
 
 @media (min-width: 992px) {
     body {
         font-size: 1.75rem;
     }
+    h1 {
+        font-size: 2.25rem;
+    }
 }
 
 @media (min-width: 1200px) {
     body {
         font-size: 2rem;
+    }
+    h1 {
+        font-size: 3rem;
     }
 }
 
@@ -140,10 +157,14 @@ details[open] {
     margin-bottom: 0.5em;
 }
 
-header {
+nav {
     display: flex;
     position: relative;
     height: 50px;
+}
+
+header {
+    display: flex;
 }
 
 /* Light/Dark mode switch */
@@ -216,8 +237,4 @@ input:checked + .slider {
 
 input:checked + .slider:before {
     transform: translateX(26px);
-}
-
-h3 {
-    margin-bottom: 0.5rem;
 }

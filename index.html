@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <nav>
         <label class="toggle-switch">
             <input type="checkbox" id="theme-toggle">
             <span class="slider">
@@ -39,23 +39,21 @@
           
             document.getElementById("theme-toggle").addEventListener("click", toggleTheme);
         </script>
-    </header>
-    <div class="bio-container">
-        <div class="profile-pic">
-            <img src="Headshot.jpg" alt="Profile Picture" class="profile-pic">
-        </div>
+    </nav>
+    <header class="bio-container">
+        <img src="Headshot.jpg" alt="Profile Picture" class="profile-pic">
         <section class="bio">
-            <h3> About Me</h3>
+            <h1> About Me</h1>
             <p> Hi there 👋 
             I am Shi Hao, a student at Cornell Tech pursuing a Masters in CS. </p>
         </section>
         <section class="bio-background">
-            <h3> Background: </h3>
+            <h1> Background: </h1>
             <p> I previously did my undergraduate studies at UC Berkeley in CS + applied math, and did NLP research at Lawrence Berkeley National Laboratory's <a href="https://nucscholar.berkeley.edu/about/">Nucscholar</a> team. </p>
         </section>
-    </div>
+    </header>
     <div class="container">
-        <h3> Coursework: </h3>
+        <h1> Coursework: </h1>
         <details>
             <summary>Fall '24</summary>
             <ul>
@@ -75,7 +73,7 @@
         </details>
     </div>
     <div class="container">
-        <h3> Projects: </h3>
+        <h1> Projects: </h1>
         <ul>
             <li> 🔮 I'm currently building <a href="https://seaobservatory.com/">SEA Observatory</a>, an AI policy tracker for South East Asia, and am volunteering with <a href="https://www.aisafety.asia/">AI Safety Asia</a> as their Technical Lead. AISA is a non-profit dedicated to enhancing AI safety and governance in the region. </li>
             <li> 🔭 I've built <a href="https://www.youtube.com/watch?v=pzdwP9G2Vy4">PixelProof</a>, a watermarking platform built on C2PA standard.</li>
@@ -83,7 +81,7 @@
         </ul>
     </div>
     <div class="container">
-        <h3> Assignment writeups: </h3>
+        <h1> Assignment writeups: </h1>
         <details>
             <summary>Learnings about <em>&lt;details&gt;</em> HTML element</summary>
             <p> Details is a cool way to hide content and provide it only when the user toggles it. Having the triangle twist built-in is great and provides a nice visual effect when clicked. I also learnt more about the "open" attribute, and used it to style the content depending on whether it was open or not.</p>
@@ -94,7 +92,7 @@
         </details>
     </div>
     <div class="container">
-        <h3>Weather in Singapore (my hometown!) </h3>
+        <h1>Weather in Singapore (my hometown!) </h1>
         <p class="weather-fact"></p>
         <script>
             const WeatherUrl = `https://api.data.gov.sg/v1/environment/air-temperature`;
@@ -113,7 +111,7 @@
         </script>
     </div>
     <div class="container">
-        <h3> Extra Credit implemented: </h3>
+        <h1> Extra Credit implemented: </h1>
         <p> Link previews using Open Graph </p>
         <p> Browser-side javascript analytics tracking: Google Analytics </p>
     </div>
